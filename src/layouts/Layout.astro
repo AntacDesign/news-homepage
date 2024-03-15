@@ -18,16 +18,13 @@ import '@fontsource-variable/inter';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="font-inter">
 		<slot />
-		<div class="attribution">
-		  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-		  Coded by <a href="#">Your Name Here</a>.
-		</div>
 	</body>
 </html>
 
 <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+	html{
+		font: 15px;
+	}
+</style>
