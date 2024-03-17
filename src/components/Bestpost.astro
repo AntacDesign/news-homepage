@@ -4,55 +4,50 @@ interface Props {
 }
 
 const {} = Astro.props;
+
+const posts = [
+    {
+        top:'01',
+        title:'Reviving Retro PCs',
+        desc:'What happens when old PCs are given modern upgrades?',
+        img: 'image-retro-pcs.jpg'
+    },
+    {
+        top:'02',
+        title:'Top 10 Laptops of 2022',
+        desc:'Our best picks for various needs and budgets.',
+        img: 'image-top-laptops.jpg'
+    },
+    {
+        top:'03',
+        title:'The Growth of Gaming',
+        desc:'How the pandemic has sparked fresh opportunities.',
+        img: 'image-gaming-growth.jpg'
+    },
+]
 ---
 
-<section>
-    <section>
-        <figure>
-            <img src="/images/image-retro-pcs.jpg" alt="">
-        </figure>
-        <section>
-            <p>
-                01
-            </p>
-            <h2>
-                Reviving Retro PCs
-            </h2>
-            <p>
-                What happens when old PCs are given modern upgrades?
-            </p>
-    </section>
-</section>
-<section>
-    <figure>
-        <img src="/images/image-top-laptops.jpg" alt="">
-    </figure>
-    <section>
-        <p>
-            02
-        </p>
-        <h2>
-            Top 10 Laptops of 2022
-        </h2>
-        <p>
-    Our best picks for various needs and budgets.
-        </p>
-    </section>
-</section>
-<section>
-    <figure>
-        <img src="/images/image-gaming-growth.jpg" alt="">
-    </figure>
-    <section>
-        <p>
-            03
-        </p>
-        <h2>
-            The Growth of Gaming
-        </h2>
-        <p>
-            How the pandemic has sparked fresh opportunities.
-        </p>
-    </section>	  
-</section>
+<section class="p-4 lg:flex lg:col-span-3 lg:gap-x-10">
+    {
+        posts.map(({img,top,title,desc})=>(
+            <section class="flex my-10 gap-6">
+                <figure>
+                    <img src={'/images/'+img} class="max-w-28 object-cover lg:h-full" alt="">
+                </figure>
+                <section>
+                    <p class=" text-4xl font-bold text-gBlue">
+                        {top}
+                    </p>
+                    <h2 class=" my-3 text-gBlue-vDark font-extrabold">
+                        <a href="#" class="hover:text-sRed">
+                            {title}
+                            </a>
+                    </h2>
+                    <p class="text-[15px] text-gBlue-dark">
+                        {desc}
+                    </p>
+            </section>
+        </section>
+        ))
+    }
 </section>

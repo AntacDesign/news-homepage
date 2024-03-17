@@ -4,34 +4,39 @@ interface Props {
 }
 
 const {} = Astro.props;
+
+const news = [
+    {
+        title: 'Hydrogen VS Electric Cars',
+        desc: 'Will hydrogen-fueled cars ever catch up to EVs?'
+    },
+    {
+        title: 'The Downsides of AI Artistry',
+        desc: 'What are the possible adverse effects of on-demand AI image generation?'
+    },
+    {
+        title: 'Is VC Funding Drying Up?',
+        desc: 'Private funding by VC firms is down 50% YOY. We take a look at what that means.'
+    },
+] 
 ---
 
-<section class="m-4 p-6 bg-gBlue-vDark text-oWhite">
+<section class="m-4 p-6 pb-0 bg-gBlue-vDark text-oWhite">
     <h2 class="text-sOrange text-4xl font-bold">
         New 
     </h2>
-    <section>
-        <h3>
-            Hydrogen VS Electric Cars
-        </h3>
-        <p>
-            Will hydrogen-fueled cars ever catch up to EVs?
-        </p>
-    </section>
-    <section>
-        <h3>
-            The Downsides of AI Artistry
-        </h3>
-        <p>
-            What are the possible adverse effects of on-demand AI image generation?
-        </p>
-    </section>
-    <section>
-        <h3>
-            Is VC Funding Drying Up?
-        </h3>
-        <p>
-            Private funding by VC firms is down 50% YOY. We take a look at what that means.
-        </p>
-    </section>
+    <div class="divide-y-[1px] divide-gBlue-dark">
+{
+    news.map(({title,desc}) => (
+        <section class="py-7">
+            <h3 class="font-bold text-oWhite text-xl mb-2">
+               {title}
+            </h3>
+            <p class="text-gBlue text-[15px]">
+                {desc}
+            </p>
+        </section>
+    ))
+}
+</div>
 </section>
