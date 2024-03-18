@@ -29,8 +29,10 @@ const news = [
 {
     news.map(({title,desc}) => (
         <section class="py-7">
-            <h3 class="font-bold text-oWhite text-xl mb-2">
-               {title}
+            <h3 class="font-bold text-oWhite text-xl mb-2 hover:text-sOrange">
+               <a href="#">
+                {title}
+                </a>
             </h3>
             <p class="text-gBlue text-[15px]">
                 {desc}

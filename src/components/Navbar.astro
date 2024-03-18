@@ -9,7 +9,7 @@
     <button class="lg:hidden" id="btnBurger">
         <img src="/images/icon-menu.svg"  alt="">
     </button>
-    <section id="secciones" class=" flex fixed justify-end w-screen top-0 left-0 right-0 bottom-0 bg-gBlue-vDark bg-opacity-50 open transition-all ease-in-out translate-x-full opacity-20 delay-300 lg:translate-x-0 lg:opacity-100 lg:bg-transparent lg:relative">
+    <section id="secciones" class=" flex fixed justify-end w-screen top-0 left-0 right-0 bottom-0 bg-gBlue-vDark bg-opacity-50 transition-transform ease-in-out translate-x-full delay-300 lg:translate-x-0 lg:bg-transparent lg:relative ">
         <ol class="transition-transform bg-oWhite w-60 p-6 text-gBlue-vDark text-2xl font-medium flex flex-col gap-y-9 lg:flex-row lg:w-fit lg:font-medium lg:text-gBlue-dark lg:gap-x-5 lg:text-base">
             <button id="btnClose" class="w-full flex justify-end pe-2 pb-12 lg:hidden">
             <img src="/images/icon-menu-close.svg" class="" alt="">
@@ -47,10 +47,10 @@
     const btn = document.getElementById('btnBurger')
     const sec = document.getElementById('secciones')
     const btnClose= document.getElementById('btnClose')
-    btn?.addEventListener('click',()=>{
-        sec?.classList.add('translate-x-0','opacity-100');
+    btn?.addEventListener('click',function(){
+        sec?.classList.remove('translate-x-full');
     })
-    btnClose?.addEventListener('click',()=>{
-        sec?.classList.remove('translate-x-0','opacity-100');
+    btnClose?.addEventListener('click',function(){
+        sec?.classList.add('translate-x-full');
     })
 </script>
